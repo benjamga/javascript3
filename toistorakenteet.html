@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toistorakenteet</title>
+</head>
+<body>
+<script>
+    //1.
+    let num = prompt('Anna luku');
+
+    function factorial(x) {
+        if (x === 0) {
+            return 1;
+        }
+        return x * factorial(x - 1);
+    }
+
+    document.write(factorial(num) + '</br>');
+
+    //2.
+    let sr = prompt('Minkä luvun neliöjuuren haluat');
+    let a = Math.sqrt(sr);
+    if (sr < 0) {
+        let st = prompt('Anna positiivinenluku. Kiitos!');
+        let b = Math.sqrt(st);
+        document.write(b + '</br>');
+    }
+    else {
+        document.write(a + '</br>');
+    }
+
+    //3.
+    let Avuosi = prompt('Anna alkuvousi');
+    let Lvuosi = prompt('Anna loppuvuosi');
+    if ((0 === Avuosi % 4) && (0 !== Avuosi % 100) || (0 === Avuosi % 400)) {
+        document.write('Vuosi on karkausvuosi </br>');
+    } else {
+        document.write('vuosi ei ole karkausvuosi </br>');
+    }
+    if ((0 === Lvuosi % 4) && (0 !== Lvuosi % 100) || (0 === Lvuosi % 400)) {
+        document.write('Vuosi on karkausvuosi </br>');
+    } else {
+        document.write('vuosi ei ole karkausvuosi </br>');
+    }
+
+    //4.
+    let ak = prompt('Arpakuutioiden lukumäärä');
+
+
+    const between_1_6 = () => 1 + Math.floor(Math.random() * 6);
+    let tulos = 0;
+    for (let i = 0; i < ak; i++) {
+         tulos += between_1_6();
+    }
+    document.write('Yhteensä ' + tulos + '</br>');
+
+    //5.
+    let p = prompt('Anna alkuluku');
+
+        if (isPrimes(p)) {
+            document.write('<p>Luku on alkuluku</p>');
+        }else{
+            document.write('<p>Luku ei ole alkuluku</p>');
+        }
+
+
+    function isPrimes(n) {
+        let primes = true;
+        for (i = 2; i < n; i++) {
+            if (n % i == 0) {
+                primes = false;
+                break;
+            }
+        }
+        return primes;
+    }
+</script>
+</body>
+</html>
